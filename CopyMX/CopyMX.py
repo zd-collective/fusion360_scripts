@@ -40,7 +40,7 @@ def parse_layout():
 def add_switch(rootComp, occ, mx, xPos, yPos):
     transform = adsk.core.Matrix3D.create()
     ogTransform = occ.transform
-    ogTransform.translation = adsk.core.Vector3D.create(ogTransform.translation.x + (1.905 * xPos), ogTransform.translation.y + (1.905 * yPos), ogTransform.translation.z)
+    ogTransform.translation = adsk.core.Vector3D.create(ogTransform.translation.x + (1.905 * xPos), ogTransform.translation.y, ogTransform.translation.z - (1.905 * yPos))
     newOcc = rootComp.occurrences.addExistingComponent(mx, ogTransform)
     newOcc.transform = ogTransform
 
